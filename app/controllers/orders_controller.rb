@@ -2,6 +2,8 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @order_items = @order.line_items.all
+    @products
   end
 
   def create
@@ -22,7 +24,6 @@ class OrdersController < ApplicationController
   private
 
   def empty_cart!
-    
     update_cart({})
   end
 

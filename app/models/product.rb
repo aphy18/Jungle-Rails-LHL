@@ -11,3 +11,5 @@ class Product < ActiveRecord::Base
   validates :category, presence: true
 
 end
+
+# setting data that is required (think of NOT NULL)

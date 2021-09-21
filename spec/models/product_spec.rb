@@ -24,7 +24,16 @@ RSpec.describe Product, type: :model do
       @product = Product.new
       @product.price = nil
       expect(@product.valid?).to eq(false)
-
+    end
+    it "doesn't proceed when there's no quantity" do
+      @product = Product.new
+      @product.name = 'Tesla'
+      @product.quantity = nil
+      expect(@product.valid?).to eq(false)
+    end
+    it "doesn't proceed when there's no category" do
+      @category = nil
+      expect(@category).to eq(nil)
     end
   end
 end
